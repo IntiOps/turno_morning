@@ -1,0 +1,18 @@
+---
+name: Primer workflow
+on:
+  push:
+    branches:
+      - Antony
+jobs:
+  Prueba:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::111111111111:role/my-github-actions-role-test
+          aws-region: sa-east-1
