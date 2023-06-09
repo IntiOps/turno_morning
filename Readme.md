@@ -2,7 +2,7 @@
 
 GitHub Actions es una plataforma de integración y despliegue continuos (CI/CD) que te permite automatizar tu mapa de compilación, pruebas y despliegue. Puedes crear workflows, crear y probar cada solicitud de cambios en tu repositorio o desplegar solicitudes de cambios fusionadas a producción.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/83f1e40e-95b8-4c7d-b3a4-0239e2bd6c52/Untitled.png)
+![GitHutbActions](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/83f1e40e-95b8-4c7d-b3a4-0239e2bd6c52/Untitled.png)
 
 ### Workflows
 
@@ -26,21 +26,22 @@ jobs: # Agrupa todos los trabajos que se ejecutan en el flujo de trabajo
 
 Como setear credenciales AWS
 
-
-name: 'Primer workflow'
-on: 
-	push:
-		branches:
-				- Antony
+```yaml
+name: Primer workflow
+on:
+  push:
+    branches:
+      - Antony
 jobs:
-	Prueba:
-		runs-on: ubuntu-latest
-		permissions: # necesario
-			id-token: write
-	    contents: read
-	steps:
-		- name: Configure AWS credentials from Test account
-	    uses: aws-actions/configure-aws-credentials@v2
-	    with:
-	      role-to-assume: arn:aws:iam::111111111111:role/my-github-actions-role-test
-        aws-region: us-east-1
+  Prueba:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::111111111111:role/my-github-actions-role-test
+          aws-region: sa-east-1
+```
