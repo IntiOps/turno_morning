@@ -14,14 +14,17 @@ Para llevar un correcto orden:
 En el repositorio, crear el directorio `.github/workflows/` para almacenar los archivos de flujo de trabajo.
 
 ```yaml
-name: 'Primero_Workflow' # Nombre de workflow
+name: Primer_Workflow # Nombre de workflow
 on: # Se utiliza el comando on para setear que eventos harán que se active el workflow. Por ejemplo, cuando alguien suba a cualquier rama del repositorio
-	push
+  push:
+    branches:
+      - Antony
 jobs: # Agrupa todos los trabajos que se ejecutan en el flujo de trabajo
-	first-job: # Nombre de los jobs
-    runs-on: ubuntu-latest # confgura que ejecutor tendrá el job
-    steps: # agrupa los pasos que se realizara en este job
-       - run	 
+  Test_job: # Nombre de los jobs
+   runs-on: ubuntu-latest # confgura que ejecutor tendrá el job
+   steps: # agrupa los pasos que se realizara en este job
+      - name: Prueba
+        run: echo "Hello World" 
 ```
 
 Como setear credenciales AWS
