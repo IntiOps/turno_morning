@@ -11,11 +11,10 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - name: Prueba
-        run: echo "Hello World"
-      
-      # - name: Configure AWS credentials from Test account
-        # uses: aws-actions/configure-aws-credentials@v2
-        # with:
-         # role-to-assume: arn:aws:iam::111111111111:role/my-github-actions-role-test
-         # aws-region: sa-east-1
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: AKIAZBSJAV3SABBM7WG4
+          aws-secret-access-key: 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
+          aws-region: us-east-1
+
