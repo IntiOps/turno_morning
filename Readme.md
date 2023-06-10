@@ -7,7 +7,7 @@ GitHub Actions es una plataforma de integración y despliegue continuos (CI/CD) 
 
 Un flujo de trabajo es un proceso automatizado configurable que ejecutará uno o más jobs. Los flujos de trabajo se definen mediante un archivo de YAML que se verifica en tu repositorio y se ejecutará cuando lo active un evento dentro de este o puede activarse manualmente o en una programación definida.
 
-###Estructura del workflow
+### Estructura del workflow
 
 Para llevar un correcto orden:
 
@@ -15,7 +15,7 @@ En el repositorio, se debe de crear el directorio `.github/workflows/` para alm
 
 ```yaml
 name: Primer_Workflow # Nombre de workflow
-on: # Se utiliza el comando on para setear que eventos harán que se active el workflow. Por ejemplo, cuando alguien suba a cualquier rama del repositorio
+on: # Se utiliza el comando on para setear que eventos harán que se active el workflow. Por ejemplo, cuando se haga un push:
   push:
     branches:
       - Antony
@@ -32,14 +32,7 @@ Al finalizar, subir el archivo en la rama que crea correspondiente. Al confirmar
 Para ver los resultados debe hacer clic a 'Actions'. En el cual, en la barrera lateral izquierda, se mostrará el workflow creado.
 
 
-
-
-
-
-
-
-
-Como setear credenciales AWS
+##  CONFIGURAR CREDENCIALES AWS CON GITHUB ACTIONS
 
 ```yaml
 name: Primer workflow
