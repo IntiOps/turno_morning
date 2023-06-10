@@ -2,16 +2,16 @@
 
 GitHub Actions es una plataforma de integración y despliegue continuos (CI/CD) que te permite automatizar tu mapa de compilación, pruebas y despliegue. Puedes crear workflows, crear y probar cada solicitud de cambios en tu repositorio o desplegar solicitudes de cambios fusionadas a producción.
 
-![GitHutbActions](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/83f1e40e-95b8-4c7d-b3a4-0239e2bd6c52/Untitled.png)
 
 ### Workflows
 
 Un flujo de trabajo es un proceso automatizado configurable que ejecutará uno o más jobs. Los flujos de trabajo se definen mediante un archivo de YAML que se verifica en tu repositorio y se ejecutará cuando lo active un evento dentro de este o puede activarse manualmente o en una programación definida.
-Estructura del workflow
+
+###Estructura del workflow
 
 Para llevar un correcto orden:
 
-En el repositorio, crear el directorio `.github/workflows/` para almacenar los archivos de flujo de trabajo.
+En el repositorio, se debe de crear el directorio `.github/workflows/` para almacenar los archivos de flujo de trabajo. Dentro de el, crear el archivo firstworkflow.yml
 
 ```yaml
 name: Primer_Workflow # Nombre de workflow
@@ -26,6 +26,18 @@ jobs: # Agrupa todos los trabajos que se ejecutan en el flujo de trabajo
       - name: Prueba
         run: echo "Hello World" 
 ```
+
+Al finalizar, subir el archivo en la rama que crea correspondiente. Al confirmar el flujo de trabajo en una rama del repositorio, se desencadenará el evento push y se ejecutará el flujo de trabajo.
+
+Para ver los resultados debe hacer clic a 'Actions'. En el cual, en la barrera lateral izquierda, se mostrará el workflow creado.
+
+
+
+
+
+
+
+
 
 Como setear credenciales AWS
 
